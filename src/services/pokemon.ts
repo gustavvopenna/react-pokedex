@@ -7,3 +7,7 @@ const pokemonService = axios.create({
 export const getPokemons = ({ pageParam = 'pokemon?offset=0&limit=20' }) => {
   return pokemonService.get(pageParam)
 };
+
+export const getPokemon = (url: string) => {
+  return pokemonService.get(url)
+}
