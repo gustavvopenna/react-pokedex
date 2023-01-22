@@ -4,6 +4,6 @@ const pokemonService = axios.create({
   baseURL: "https://pokeapi.co/api/v2/"
 });
 
-export const getPokemons = () => {
-  return pokemonService.get('pokemon')
+export const getPokemons = ({ pageParam = 'pokemon?offset=0&limit=20' }) => {
+  return pokemonService.get(pageParam)
 };
