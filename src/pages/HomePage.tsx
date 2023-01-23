@@ -1,5 +1,4 @@
 import { useInfiniteQuery } from 'react-query'
-import { Link } from 'react-router-dom'
 
 import { getPokemons } from '../api/pokemon'
 import { useFavoritesStore } from '../store/favoritesStore';
@@ -14,7 +13,6 @@ function HomePage() {
     { getNextPageParam: lastPage => lastPage.data.next }
   );
 
-  const favorites = useFavoritesStore((state) => state.favorites)
   const addFavorite = useFavoritesStore((state) => state.addFavorite)
   const removeFavorite = useFavoritesStore((state) => state.removeFavorite)
   const selected = useFavoritesStore((state) => state.selected)

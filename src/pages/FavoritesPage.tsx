@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import Card from '../components/Card'
-import Layout from '../components/Layout'
 
 import { useFavoritesStore } from '../store/favoritesStore'
+import Card from '../components/Card'
+import Layout from '../components/Layout'
 
 function FavoritesPage() {
   const removeFavorite = useFavoritesStore((state) => state.removeFavorite)
