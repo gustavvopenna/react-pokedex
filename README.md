@@ -1,4 +1,4 @@
-# react-pokedex
+# 🔴 Pokedex
 
 ## Prerequisitos
 1. Node v14  mínimo
