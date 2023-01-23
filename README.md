@@ -11,7 +11,7 @@ Una vez clonado el proyecto de forma local, ingresa los siguientes comandos:
 1. ``` yarn install ```
 2. ``` yarn dev ```
 
-## Demo
+## 🔥 Demo
 
 [React-Pokedex](https://react-pokedex-bvymw5ek9-gustavvopenna.vercel.app/)
 
@@ -34,3 +34,8 @@ Zustand necesita mucho menos boilerplate, reduciendo la cantidad de código y me
 ### Estilos
 
 Para crear los estilos, elegí Tailwind por la velocidad que proporciona al momento de crear interfaces personalizadas sin tener que estar creando archivos separados de CSS o pensar nombres de clases.
+
+### ✏️  Pendientes
+
+- Responsive design en mobile
+- Filtros
