@@ -6,9 +6,9 @@ import Chip from './Chip';
 
 interface CardProps {
   url: string,
-  onClick: () => void,
-  onAddFavorite: (pokemon: any) => void
-  onRemoveFavorite: (pokemon: any) => void
+  onClick?: () => void,
+  onAddFavorite?: (pokemon: any) => void
+  onRemoveFavorite?: (pokemon: any) => void
 }
 
 function Card({ url, onClick, onAddFavorite, onRemoveFavorite }: CardProps) {

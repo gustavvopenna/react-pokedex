@@ -3,7 +3,31 @@ import { persist } from 'zustand/middleware'
 
 const DEFAULT_SELECTED = { url: "https://pokeapi.co/api/v2/pokemon/1/", name: "bulbasaur" }
 
-export const useFavoritesStore = create(
+interface Iselected {
+  url: string,
+  name: string
+}
+
+interface IfavoriteItem {
+  id: string,
+  name: string,
+  url: string,
+}
+
+interface IfavoritesState {
+  favorites: {},
+  selected: Iselected,
+  setSelected: (item: Iselected) => void,
+  addFavorite: (item: IfavoriteItem) => void,
+  removeFavorite: (item) => void,
+}
+
+export const useFavoritesStore = create<
+  IfavoritesState,
+  [
+    ['zustand/persist', IfavoritesState]
+  ]
+>(
   persist(
     (set) => ({
       favorites: {},
