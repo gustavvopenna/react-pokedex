@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import App from './App'
-import HomePage from './pages/Homepage'
+import HomePage from './pages/HomePage'
 import FavoritesPage from './pages/FavoritesPage'
 import './index.css'
 
