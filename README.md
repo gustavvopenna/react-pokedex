@@ -13,7 +13,7 @@ Una vez clonado el proyecto de forma local, ingresa los siguientes comandos:
 
 ## 🔥 Demo
 
-[React-Pokedex](https://react-pokedex-bvymw5ek9-gustavvopenna.vercel.app/)
+[React-Pokedex](https://react-pokedex-gustavvopenna.vercel.app/)
 
 <img width="1440" alt="Screen Shot 2023-01-23 at 17 36 57" src="https://user-images.githubusercontent.com/37059612/214176417-d6e3decd-5f17-4750-997a-a5e95edcfde4.png">
 
