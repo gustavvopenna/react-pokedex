@@ -10,9 +10,6 @@ function FavoritesPage() {
 
   return (
     <Layout>
-      <div>
-        <Link to="/">Home</Link>
-      </div>
       <div className='grid grid-cols-3 gap-x-4 gap-y-12'>
         {
           Object.values(favorites).map(pokemon => (
