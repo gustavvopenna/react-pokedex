@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-import { Transition } from '@tailwindui/react'
+import { Transition } from "@headlessui/react"
 
 import { getPokemon } from "../api/pokemon";
 import { useFavoritesStore } from "../store/favoritesStore";
@@ -27,6 +27,7 @@ function Info({ url }: InfoProps) {
   
   return (
     <Transition
+      as="aside"
       appear={true}
       show={showAnimation}
       enter="transition-all duration-1000"
