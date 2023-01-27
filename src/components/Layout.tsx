@@ -1,24 +1,22 @@
-import { Link } from 'react-router-dom'
-import PokeballImg from '../assets/images/pokeball.svg'
-import { useFavoritesStore } from '../store/favoritesStore';
+import { PropsWithChildren } from "react";
 
-function Layout({ children }: any) {
-  const favorites = useFavoritesStore((state) => state.favorites)
-
-  return (
-    <div className='bg-gray-100 min-h-screen'>
-      <div className='sticky top-0 max-w-6xl mx-auto bg-white rounded-b-lg p-4 text-slate-800 font-bold uppercase z-10 mb-4 flex space-x-4'>
-        <Link to="/">Home</Link>
-        <Link to="/favorites">Favorites({ Object.keys(favorites).length })</Link>
-      </div>
-      <div className='relative'>
-        <img className='fixed top-[-200px] left-[-200px] w-[540px] h-[540px] -rotate-12 text-red-600' src={PokeballImg} alt="pokeball" />
-        <div className='px-4 py-12 max-w-5xl mx-auto'>
-          {children}
-        </div>
-      </div>
-    </div>
-  )
+interface LayoutProps {
+  header?: JSX.Element
+  footer?: JSX.Element
+  aside?: JSX.Element
 }
 
-export default  Layout;
+export default function Layout({ children, header, aside, footer }: PropsWithChildren<LayoutProps>) {
+  return (
+    <div className="grid min-h-screen min-w-full max-h-screen grid-rows-[70px_minmax(400px,_1fr)_40px] bg-slate-100">
+      {header}
+      <main className="grid grid-cols-[1fr_300px] gap-4 max-w-4xl mx-auto">
+          <section className="overflow-auto pt-10">
+            {children}
+          </section>
+          {aside}
+      </main>
+      {footer}
+    </div>
+  )
+};

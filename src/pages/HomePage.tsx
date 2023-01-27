@@ -5,6 +5,8 @@ import { useFavoritesStore } from '../store/favoritesStore';
 import Card from '../components/Card';
 import Info from '../components/Info';
 import Layout from '../components/Layout';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function HomePage() {
   const { data, isLoading, fetchNextPage } = useInfiniteQuery(
@@ -23,27 +25,29 @@ function HomePage() {
   }
 
   return (
-    <Layout>
-      <div className='flex space-x-4 mt-10'>
-        <div>
-          <div className='grid grid-cols-3 gap-x-4 gap-y-12'>
-            {
-              data?.pages.map(page => page.data.results.map(pokemon => (
-                <Card
-                  key={`pokemon-${pokemon.name}`}
-                  url={pokemon.url}
-                  onClick={() => setSelected(pokemon)}
-                  onAddFavorite={(info) => addFavorite({ id: info.data.id, name: info.data.name, url: pokemon.url })}
-                  onRemoveFavorite={(info) => removeFavorite({ id: info.data.id })}
-                />
-              )))
-            }
-          </div>
-          <div className='text-center'>
-            <button className='bg-red-300 px-2 py-1 rounded-full font-bold' onClick={() => fetchNextPage()}>Load More...</button>
-          </div>
-        </div>
-        <Info url={selected.url} />
+    <Layout
+      header={<Header />}
+      footer={<Footer />}
+      aside={<Info url={selected.url} />}
+    >
+      <div className='grid grid-cols-3 gap-x-4 gap-y-12 pr-6'>
+        {
+          data?.pages.map(page => page.data.results.map(pokemon => (
+            <Card
+              key={`pokemon-${pokemon.name}`}
+              url={pokemon.url}
+              onClick={() => setSelected(pokemon)}
+              onAddFavorite={(info) => addFavorite({ id: info.data.id, name: info.data.name, url: pokemon.url })}
+              onRemoveFavorite={(info) => removeFavorite({ id: info.data.id })}
+            />
+          )))
+        }
+        <button
+          className='min-h-[157px] mb-2 p-2 shadow-md bg-white rounded-xl font-bold'
+          onClick={() => fetchNextPage()}
+        >
+          More <span className='text-red-500'>+</span>
+        </button>
       </div>
     </Layout>
   )
