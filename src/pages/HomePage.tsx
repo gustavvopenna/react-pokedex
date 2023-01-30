@@ -5,8 +5,6 @@ import { useFavoritesStore } from '../store/favoritesStore';
 import Card from '../components/Card';
 import Info from '../components/Info';
 import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 function HomePage() {
   const { data, isLoading, fetchNextPage } = useInfiniteQuery(
@@ -25,11 +23,7 @@ function HomePage() {
   }
 
   return (
-    <Layout
-      header={<Header />}
-      footer={<Footer />}
-      aside={<Info url={selected.url} />}
-    >
+    <Layout aside={<Info url={selected.url} />}>
       <div className='grid grid-cols-3 gap-x-4 gap-y-12 pr-6'>
         {
           data?.pages.map(page => page.data.results.map(pokemon => (

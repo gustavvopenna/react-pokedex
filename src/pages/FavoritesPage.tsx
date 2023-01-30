@@ -10,10 +10,7 @@ function FavoritesPage() {
   const favorites = useFavoritesStore((state) => state.favorites)
 
   return (
-    <Layout
-      header={<Header />}
-      footer={<Footer />}
-    >
+    <Layout>
       <div className='grid grid-cols-3 gap-x-4 gap-y-12 pr-6'>
       {
         Object.values(favorites).map(pokemon => (
