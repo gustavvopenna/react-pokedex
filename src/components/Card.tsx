@@ -18,7 +18,7 @@ function Card({ url, onClick, onAddFavorite, onRemoveFavorite }: CardProps) {
   const isFavorite = !!favorites[pokemon?.data.id]
 
   return (
-    <div className='group relative mb-2 p-2 pt-12 text-center shadow-md bg-white rounded-xl hover:scale-105 duration-300' onClick={onClick}>
+    <div className='group relative min-w-[168px] mb-2 p-2 pt-12 text-center shadow-md bg-white rounded-xl hover:scale-105 duration-300' onClick={onClick}>
       {
         isFavorite ? (
           <button
